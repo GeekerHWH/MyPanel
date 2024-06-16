@@ -4,15 +4,16 @@ import (
 	"os/user"
 
 	"github.com/spf13/cobra"
+	"web-appstore.io/server"
 )
 
 func init() {}
 
 var RootCmd = &cobra.Command{
-	Use:   "1panel",
-	Short: "1Panel ，一款现代化的 Linux 面板",
+	Use:   "MyPanel",
+	Short: "MyPanel, helps people manage their Linux system in a decent way",
 	RunE: func(cmd *cobra.Command, args []string) error {
-		// server.Start()
+		server.Start()
 		return nil
 	},
 }
