@@ -5,13 +5,13 @@ import (
 	"strings"
 )
 
-func checkAPTInstalled() bool {
-	cmd := exec.Command("dpkg", "-s", "apt")
+func checkDNFInstalled() bool {
+	cmd := exec.Command("rpm", "-q", "dnf")
 	output, err := cmd.CombinedOutput()
 	if err != nil {
 		return false
 	}
-	if strings.Contains(string(output), "Status: install ok installed") {
+	if strings.Contains(string(output), "is installed") {
 		return true
 	}
 	return false

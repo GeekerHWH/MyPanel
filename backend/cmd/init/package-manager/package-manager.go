@@ -9,7 +9,8 @@ import (
 func Init() {
 	fmt.Println(isDPKGInstalled())
 	fmt.Println(isRPMInstalled())
-
+	fmt.Println(checkAPTInstalled())
+	fmt.Println(checkDNFInstalled())
 }
 
 func isDPKGInstalled() bool {
@@ -22,7 +23,7 @@ func isRPMInstalled() bool {
 	return cmd.Run() == nil
 }
 
-func checkInstalled(packageName string) bool {
+func checkInstalledByDPKG(packageName string) bool {
 	cmd := exec.Command("dpkg", "-s", packageName)
 	output, err := cmd.CombinedOutput()
 	if err != nil {
