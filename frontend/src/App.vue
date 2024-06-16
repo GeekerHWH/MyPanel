@@ -1,5 +1,4 @@
 <template>
-  <div class="common-layout">
     <el-container>
       <el-header>Header</el-header>
 
@@ -31,12 +30,10 @@
       </el-container>
 
     </el-container>
-  </div>
 </template>
 
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <style scoped>
